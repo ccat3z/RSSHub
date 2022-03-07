@@ -240,6 +240,10 @@ pageClass: routes
 
 </Route>
 
+### 科学技术政策办公室
+
+<Route author="LyleLee" example="/whitehouse/ostp" path="/whitehouse/ostp"/>
+
 ## 美国财政部
 
 ### 新闻稿
@@ -313,6 +317,50 @@ pageClass: routes
 ### 争端解决新闻
 
 <Route author="nczitzk" example="/wto/dispute-settlement" path="/wto/dispute-settlement/:year?" :paramsDesc="['年份，默认为当前年份']"/>
+
+## 世界卫生组织 WHO
+
+### 新闻稿
+
+<Route author="nczitzk" example="/who/news" path="/who/news/:language?" :paramsDesc="['语言，见下表，默认为英语']">
+
+语言
+
+| English | العربية | 中文 | Français | Русский | Español | Português |
+| ------- | ------- | -- | -------- | ------- | ------- | --------- |
+| en      | ar      | zh | fr       | ru      | es      | pt        |
+
+</Route>
+
+### 媒体中心
+
+<Route author="LogicJake nczitzk" example="/who/news-room/feature-stories" path="/who/news-room/:category?/:language?" :paramsDesc="['分类，见下表，默认为特写故事', '语言，见下表，默认为英语']">
+
+分类
+
+| 特写故事            | 评论           |
+| --------------- | ------------ |
+| feature-stories | commentaries |
+
+语言
+
+| English | العربية | 中文 | Français | Русский | Español | Português |
+| ------- | ------- | -- | -------- | ------- | ------- | --------- |
+| en      | ar      | zh | fr       | ru      | es      | pt        |
+
+</Route>
+
+### 总干事的讲话
+
+<Route author="nczitzk" example="/who/speeches" path="/who/speeches/:language?" :paramsDesc="['语言，见下表，默认为英语']">
+
+语言
+
+| English | العربية | 中文 | Français | Русский | Español | Português |
+| ------- | ------- | -- | -------- | ------- | ------- | --------- |
+| en      | ar      | zh | fr       | ru      | es      | pt        |
+
+</Route>
 
 ## 苏州市人民政府
 
@@ -453,6 +501,14 @@ pageClass: routes
 ### 政策解读
 
 <Route author="Yoge-Code" example="/gov/miit/zcjd" path="/gov/miit/zcjd"/>
+
+### 文件发布
+
+<Route author="Fatpandac" example="/gov/miit/wjfb/ghs" path="/gov/miit/wjfb/:ministry" :paramsDesc="['部门缩写，可以在对应 URL 中获取']"/>
+
+### 意见征集
+
+<Route author="Fatpandac" example="/gov/miit/yjzj" path="/gov/miit/yjzj"/>
 
 ### 文件公示
 

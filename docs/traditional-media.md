@@ -66,7 +66,7 @@ pageClass: routes
 
 ### 话题
 
-<Route author="mjysci" example="/apnews/topics2/ap-top-news" path="/apnews/topics2/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/hub/ap-top-news](https://apnews.com/hub/ap-top-news) 的话题为 `ap-top-news`']"  anticrawler="1"/>
+<Route author="mjysci" example="/apnews/topics/ap-top-news" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/hub/ap-top-news](https://apnews.com/hub/ap-top-news) 的话题为 `ap-top-news`']"  anticrawler="1"/>
 采用了 `puppeteer` 规避 `Project Shield`，无全文抓取，建议自建。
 
 ## BBC
@@ -665,6 +665,21 @@ IT・科学 tech_science
 
 <Route author="nczitzk" example="/eastday/portrait" path="/eastday/portrait"/>
 
+### 24 小时热闻
+
+<Route author="nczitzk" example="/eastday/24" path="/eastday/24/:category?" :paramsDesc="['分类，见下表，默认为社会']">
+
+| 推荐 | 社会 | 娱乐 | 国际 | 军事 |
+| -- | -- | -- | -- | -- |
+
+| 养生 | 汽车 | 体育 | 财经 | 游戏 |
+| -- | -- | -- | -- | -- |
+
+| 科技 | 国内 | 宠物 | 情感 | 人文 | 教育 |
+| -- | -- | -- | -- | -- | -- |
+
+</Route>
+
 ## 东网
 
 <Route author="Fatpandac" example="/oncc/zh-hant/news" path="/oncc/:language/:channel?" :paramsDesc="['`zh-hans` 为简体，`zh-hant` 为繁体', '频道，默认为港澳']">
@@ -775,7 +790,7 @@ Type 栏目：
 
 ### 实时快讯
 
-<Route author="nczitzk" example="/wallstreetcn/live" path="/wallstreetcn/live/:channel?" :paramsDesc="['快讯分类，默认`global`，见下表']">
+<Route author="nczitzk" example="/wallstreetcn/live" path="/wallstreetcn/live/:category?/:score?" :paramsDesc="['快讯分类，默认`global`，见下表', '快讯重要度，默认`1`全部快讯，可设置为`2`只看重要的']">
 
 | 要闻     | A 股     | 美股       | 港股       | 外汇    | 商品        | 理财        |
 | ------ | ------- | -------- | -------- | ----- | --------- | --------- |

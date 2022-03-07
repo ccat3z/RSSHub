@@ -156,6 +156,10 @@ pageClass: routes
 
 <Route author="Ji4n1ng" example="/99percentinvisible/transcript" path="/99percentinvisible/transcript"/>
 
+## A 姐分享
+
+<Route author="zhenhappy" example="/abskoop" path="/abskoop"/>
+
 ## AcFun
 
 见 [#AcFun](/anime.html#acfun)
@@ -408,6 +412,14 @@ BT 之家的域名会变更，本路由以 <https://www.btbtt20.com> 为默认�
 ### 系列
 
 <Route author="MegrezZhu CoderTonyChan Felix2yu" example="/javbus/series/44q" path="/javbus/series/:seriesid" :paramsDesc="['系列id，详见作品中系列的链接']" />
+
+### 制作商
+
+<Route author="MegrezZhu CoderTonyChan Felix2yu" example="/javbus/studio/ej" path="/javbus/studio/:studioid" :paramsDesc="['制作商id，详见作品右侧制作商的链接']" />
+
+### 发行商
+
+<Route author="MegrezZhu CoderTonyChan Felix2yu" example="/javbus/label/x8" path="/javbus/label/:labelid" :paramsDesc="['发行商id，详见作品右侧发行商的链接']" />
 
 ### 首页 / 步兵
 
@@ -1238,6 +1250,18 @@ JavDB 有多个备用域名，本路由默认使用永久域名 <https://javdb.c
 
 <Route author="nczitzk" example="/qingting/channel/293411" path="/qingting/channel/:id" :paramsDesc="['专辑id, 可在专辑页 URL 中找到']"/>
 
+## 秋爸日字
+
+### 分类
+
+<Route author="nczitzk" example="/qq88" path="/qq88/:category?" :paramsDesc="['分类 id，见下表，默认为首页']">
+
+| 首页 | オトナの土ドラ | 日剧 | 日剧 SP |
+| -- | ------- | -- | ----- |
+|    | 10      | 5  | 11    |
+
+</Route>
+
 ## 人人影视
 
 ### 评测推荐
@@ -1256,9 +1280,9 @@ JavDB 有多个备用域名，本路由默认使用永久域名 <https://javdb.c
 
 **原创 BT 电影**
 
-| 每日合集 | 国产原创 | 亚洲无码原创 | 亚洲有码原创 | 高清中文字幕 | 三级写真 | 亚洲名站有码 | VR 系列 | 欧美无码 | 动漫原创 | AI 换脸电影 | 原档收藏 WMV |
-| ---- | ---- | ------ | ------ | ------ | ---- | ------ | ----- | ---- | ---- | ------- | -------- |
-| mrhj | gcyc | yzwmyc | yzymyc | gqzwzm | sjxz | yzmzym | vr    | omwm | dmyc | ai      | ydsc     |
+| 每日合集 | 国产原创 | 亚洲无码原创 | 亚洲有码原创 | 高清中文字幕 | 三级写真 | 亚洲名站有码 | VR 系列 | 欧美无码 | 动漫原创 | AI 换脸电影 | 原档收藏 WMV | 综合讨论区 |
+| ---- | ---- | ------ | ------ | ------ | ---- | ------ | ----- | ---- | ---- | ------- | -------- | ----- |
+| mrhj | gcyc | yzwmyc | yzymyc | gqzwzm | sjxz | yzmzym | vr    | omwm | dmyc | ai      | ydsc     | zhtlq |
 
 **色花图片**
 
