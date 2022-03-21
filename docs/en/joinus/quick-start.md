@@ -291,7 +291,7 @@ const description = await ctx.cache.tryGet(link, async () => {
 });
 ```
 
-The implementation of tryGet can be seen [here](https://github.com/DIYgod/RSSHub/blob/master/lib/middleware/cache/index.js#L58). The first parameter is the cache key, the second parameter is the cache data acquisition method, and the third parameter is the cache time, it should not be passed in normally. The cache time defaults to [CACHE_CONTENT_EXPIRE](/en/install/#cache-configurations), and each time accessing the cache will recalculate the expiration time
+The implementation of tryGet can be seen [here](https://github.com/DIYgod/RSSHub/blob/master/lib/middleware/cache/index.js#L58). The 1st parameter is the cache key; the 2nd parameter is the cache data acquisition method (executed when cache miss); the 3rd parameter is the cache time, it should not be passed in normally and defaults to [CACHE_CONTENT_EXPIRE](/en/install/#cache-configurations); the 4th parameter determines whether to recalculate the expiration time ("renew" the cache) when the current attempt cache hits, `true` is on, `false` is off, default is on
 
 ---
 
@@ -334,8 +334,9 @@ ctx.state.data = {
     item: [
         {
             itunes_item_image: '', // The item image
+            itunes_duration: '', // The audio length in seconds (or H:mm:ss), optional
             enclosure_url: '', // The item's audio link
-            enclosure_length: '', // The audio length in seconds.
+            enclosure_length: '', // The file size in Bytes, optional
             enclosure_type: '', // Common types are: 'audio/mpeg' for .mp3, 'audio/x-m4a' for .m4a 'video/mp4' for .mp4
         },
     ],
@@ -351,7 +352,7 @@ ctx.state.data = {
     item: [
         {
             enclosure_url: '', // Magnet URI
-            enclosure_length: '', // The audio length, the unit is seconds, optional
+            enclosure_length: '', // The file size in Bytes, optional
             enclosure_type: 'application/x-bittorrent', // Fixed to 'application/x-bittorrent'
         },
     ],

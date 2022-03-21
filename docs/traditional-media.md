@@ -766,6 +766,61 @@ Type 栏目：
 
 <Route author="HenryQW" example="/dwnews/rank" path="/dwnews/rank"/>
 
+## 俄罗斯卫星通讯社
+
+### 分类
+
+<Route author="nczitzk" example="/sputniknews" path="/sputniknews/:category?/:language?" :paramsDesc="['分类，可在对应分类页 URL 中找到，默认为 news', '语言，见下表，默认为 English']">
+
+以下为国际站的部分分类：
+
+| WORLD | COVID-19 | BUSINESS | SPORT | TECH | OPINION |
+| ----- | -------- | -------- | ----- | ---- | ------- |
+| world | covid-19 | business | sport | tech | opinion |
+
+以下为中国站的部分分类：
+
+| 新闻   | 中国    | 俄罗斯    | 国际             | 俄中关系                   | 评论      |
+| ---- | ----- | ------ | -------------- | ---------------------- | ------- |
+| news | china | russia | category_guoji | russia_china_relations | opinion |
+
+语言
+
+| 语言          | 编号          |
+| ----------- | ----------- |
+| English     | english     |
+| Spanish     | spanish     |
+| German      | german      |
+| French      | french      |
+| Greek       | greek       |
+| Italian     | italian     |
+| Czech       | czech       |
+| Polish      | polish      |
+| Serbian     | serbian     |
+| Latvian     | latvian     |
+| Lithuanian  | lithuanian  |
+| Moldavian   | moldavian   |
+| Belarusian  | belarusian  |
+| Armenian    | armenian    |
+| Abkhaz      | abkhaz      |
+| Ssetian     | ssetian     |
+| Georgian    | georgian    |
+| Azerbaijani | azerbaijani |
+| Arabic      | arabic      |
+| Turkish     | turkish     |
+| Persian     | persian     |
+| Dari        | dari        |
+| Kazakh      | kazakh      |
+| Kyrgyz      | kyrgyz      |
+| Uzbek       | uzbek       |
+| Tajik       | tajik       |
+| Vietnamese  | vietnamese  |
+| Japanese    | japanese    |
+| Chinese     | chinese     |
+| Portuguese  | portuguese  |
+
+</Route>
+
 ## 公視新聞網
 
 ### 即時新聞
@@ -1286,6 +1341,16 @@ category 对应的关键词有
 
 <Route author="hoilc" example="/whb/bihui" path="/whb/:category" :paramsDesc="['文汇报分类名，可在该分类的 URL 中找到（即 http://www.whb.cn/zhuzhan/:category/index.html)']" />
 
+## 希望之声
+
+<Route author="Fatpandac" example="/soundofhope/term/203" path="/soundofhope/:channel/:id" :paramsDesc="['频道', '子频道 ID']">
+
+参数均可在官网获取，如：
+
+`https://www.soundofhope.org/term/203` 对应 `/soundofhope/term/203`
+
+</Route>
+
 ## 香港 01
 
 ### 热门
@@ -1431,6 +1496,18 @@ category 对应的关键词有
 | 排球     | 游泳   | 乒乓球      | 羽毛球    | 台球      | 田径       | 体操    | 冰雪     | 射击 | 马术    | 拳击搏击   | UFC | 其他     |
 | ------ | ---- | -------- | ------ | ------- | -------- | ----- | ------ | -- | ----- | ------ | --- | ------ |
 | volley | swim | pingpang | badmin | snooker | tianjing | ticao | winter | sh | mashu | kungfu | ufc | others |
+
+</Route>
+
+## 新唐人电视台
+
+### 频道
+
+<Route author="Fatpandac" example="/ntdtv/b5/prog1201" path="/ntdtv/:language/:id" :paramsDesc="['语言，简体为`gb`，繁体为`b5`', '子频道名称']">
+
+参数均可在官网获取，如：
+
+`https://www.ntdtv.com/b5/prog1201` 对应 `/ntdtv/b5/prog1201`
 
 </Route>
 
@@ -1586,7 +1663,9 @@ category 对应的关键词有
 
 ## 自由亚洲电台
 
-<Route author="zphw" example="/rfa/mandarin" path="/rfa/:language?/:channel?/:subChannel?" :paramsDesc="['语言，默认 English', '频道', '子频道（如存在）']" />
+### 新闻
+
+<Route author="zphw" example="/rfa/mandarin" path="/rfa/:language?/:channel?/:subChannel?" :paramsDesc="['语言，默认 English', '频道', '子频道（如存在）']">
 
 通过指定频道参数，提供比官方源更佳的阅读体验。
 
@@ -1595,3 +1674,5 @@ category 对应的关键词有
 `https://www.rfa.org/cantonese/news` 对应 `/rfa/cantonese/news`
 
 `https://www.rfa.org/cantonese/news/htm` 对应 `/rfa/cantonese/news/htm`
+
+</Route>
