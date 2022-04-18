@@ -237,6 +237,26 @@ pageClass: routes
 
 </Route>
 
+## 首席经济学家论坛
+
+### 最新更新
+
+<Route author="FledgeXu" example="/chinacef" path="/chinacef"/>
+
+### 专家
+
+<Route author="kdanfly" example="/chinacef/17/" path="/chinacef/:experts_id/" :paramsDesc="['专家编号']" radar="1" rssbud="1">
+
+| 李迅雷 | 夏斌 |
+| --- | -- |
+| 17  | 35 |
+
+</Route>
+
+### 金融热点
+
+<Route author="kdanfly" example="/chinacef/portal/hot" path="/chinacef/portal/hot" radar="1" rssbud="1" />
+
 ## 淘股吧股票论坛
 
 ### 论坛总版
@@ -289,9 +309,9 @@ pageClass: routes
 
 <Route author="hillerliao" example="/xueqiu/user_stock/1247347556" path="/xueqiu/user_stock/:id" :paramsDesc="['用户 id, 可在用户主页 URL 中找到']"/>
 
-### 基金净值更新
+### 蛋卷基金净值更新
 
-<Route author="HenryQW" example="/xueqiu/fund/040008" path="/xueqiu/fund/:id" :paramsDesc="['基金代码, 可在基金主页 URL 中找到. 此路由的数据为场外基金 (`F`开头)']"/>
+<Route author="HenryQW NathanDai" example="/xueqiu/fund/040008" path="/xueqiu/fund/:id" :paramsDesc="['基金代码, 可在基金主页 URL 中找到. 此路由的数据为场外基金 (`F`开头)']"/>
 
 ### 组合最新调仓信息
 
@@ -310,6 +330,10 @@ pageClass: routes
 ### 股票评论
 
 <Route author="zytomorrow" example="/xueqiu/stock_comments/SZ002626" path="/xueqiu/stock_comments/:id/:titleLength?" :paramsDesc="['股票代码（需要带上交易所）', '标题长度']"/>
+
+### 热帖
+
+<Route author="hillerliao" example="/xueqiu/hots" path="/xueqiu/hots"/>
 
 ## 有知有行
 
