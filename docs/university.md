@@ -114,7 +114,7 @@ pageClass: routes
 
 ### 信科公告通知
 
-<Route author="Ir1d" example="/pku/eecs/0" path="/pku/eecs/:type" :paramsDesc="['分区 type，可在网页 URL 中找到']">
+<Route author="Ir1d" example="/pku/eecs/0" path="/pku/eecs/:type" :paramsDesc="['分区 type，可在网页 URL 中找到']" radar="1" rssbud="1">
 
 | 全部 | 学院通知 | 人事通知 | 教务通知 | 学工通知 | 科研通知 | 财务通知 | 工会通知 | 院友通知 |
 | -- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -124,15 +124,15 @@ pageClass: routes
 
 ### 每周一推 - 中国政治学研究中心
 
-<Route author="vhxubo" example="/pku/rccp/mzyt" path="/pku/rccp/mzyt" />
+<Route author="vhxubo" example="/pku/rccp/mzyt" path="/pku/rccp/mzyt" radar="1" rssbud="1"/>
 
 ### 生命科学学院近期讲座
 
-<Route author="TPOB" example="/pku/cls/lecture" path="/pku/cls/lecture" />
+<Route author="TPOB" example="/pku/cls/lecture" path="/pku/cls/lecture" radar="1" rssbud="1"/>
 
 ### 北大未名 BBS 全站十大
 
-<Route author="wooddance" example="/pku/bbs/hot" path="/pku/bbs/hot">
+<Route author="wooddance" example="/pku/bbs/hot" path="/pku/bbs/hot" radar="1" rssbud="1">
 
 ::: warning 注意
 
@@ -142,9 +142,19 @@ pageClass: routes
 
 </Route>
 
+### 学生就业指导服务中心
+
+<Route author="DylanXie123" example="/pku/scc/recruit/zpxx" path="/pku/scc/recruit/:type?" :paramsDesc="['分区，见下表，默认请求 `tzgg`']" radar="1" rssbud="1">
+
+| xwrd | tzgg | zpxx | gfjgxx | sxxx | cyxx |
+| ---- | ---- | ---- | ------ | ---- | ---- |
+| 新闻热点 | 通知公告 | 招聘信息 | 国防军工信息 | 实习信息 | 创业信息 |
+
+</Route>
+
 ### 人事处
 
-<Route author="nczitzk" example="/pku/hr" path="/pku/hr/:category?" :paramsDesc="['分类，见下方说明，默认为首页最新公告']">
+<Route author="nczitzk" example="/pku/hr" path="/pku/hr/:category?" :paramsDesc="['分类，见下方说明，默认为首页最新公告']" radar="1" rssbud="1">
 
 ::: tip 提示
 
@@ -155,6 +165,10 @@ pageClass: routes
 :::
 
 </Route>
+
+### 研究生招生网
+
+<Route author="shengmaosu" example="/pku/admission/sszs" path="/pku/admission/sszs" radar="1" rssbud="1"/>
 
 ## 北京航空航天大学
 
@@ -2021,6 +2035,16 @@ type 列表：
 
 </Route>
 
+### 教务处
+
+<Route author="kxxt" example="/sdu/wh/jwc/gztz" path="/sdu/wh/jwc/:column?" :paramsDesc="['专栏名称，默认为工作通知（`gztz`）']" radar="1" rssbud="1">
+
+| 规章制度 | 专业建设 | 实践教学 | 支部风采 | 服务指南 | 教务要闻 | 工作通知 | 教务简报 | 常用下载 |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| gzzd | zyjs | sjjx | zbfc | fwzn | jwyw | gztz | jwjb | cyxz |
+
+</Route>
+
 ## 上海大学
 
 ### 上海大学官网信息
@@ -2958,7 +2982,7 @@ type 列表：
 
 ### 官网通知公告
 
-<Route author="hang333" example="/ustc/news/gl" path="/ustc/news/:type?" :paramsDesc="['可选，默认为 gl']">
+<Route author="hang333 jasongzy" example="/ustc/news/gl" path="/ustc/news/:type?" :paramsDesc="['分类，默认为管理类']" radar="1" rssbud="1">
 
 | 教学类 | 科研类 | 管理类 | 服务类 |
 | --- | --- | --- | --- |
@@ -2968,7 +2992,7 @@ type 列表：
 
 ### 教务处通知新闻
 
-<Route author="hang333" example="/ustc/jwc/info" path="/ustc/jwc/:type?" :paramsDesc="['可选，默认显示所有种类']">
+<Route author="hang333" example="/ustc/jwc/info" path="/ustc/jwc/:type?" :paramsDesc="['分类，默认显示所有种类']" radar="1" rssbud="1">
 
 | 信息   | 教学       | 考试   | 交流       |
 | ---- | -------- | ---- | -------- |
@@ -2976,9 +3000,39 @@ type 列表：
 
 </Route>
 
-### 中国科学技术大学就业信息网
+### 研究生院
 
-<Route author="nczitzk" example="/ustc/job" path="/ustc/job/:category?" :paramsDesc="['分类，见下表，默认为招聘公告']">
+<Route author="jasongzy" example="/ustc/gs/tzgg" path="/ustc/gs/:type?" :paramsDesc="['分类，见下表，默认为通知公告']" radar="1" rssbud="1">
+
+| 通知公告 | 新闻动态 |
+| ---- | ---- |
+| tzgg | xwdt |
+
+</Route>
+
+### 信息科学技术学院
+
+<Route author="jasongzy" example="/ustc/sist/tzgg" path="/ustc/sist/:type?" :paramsDesc="['分类，见下表，默认为通知公告']" radar="1" rssbud="1">
+
+| 通知公告 | 招生工作 |
+| ---- | ---- |
+| tzgg | zsgz |
+
+</Route>
+
+### 电子工程与信息科学系
+
+<Route author="jasongzy" example="/ustc/eeis/tzgg" path="/ustc/eeis/:type?" :paramsDesc="['分类，见下表，默认为通知公告']" radar="1" rssbud="1">
+
+| 通知公告 | 新闻信息 |
+| ---- | ---- |
+| tzgg | xwxx |
+
+</Route>
+
+### 就业信息网
+
+<Route author="nczitzk" example="/ustc/job" path="/ustc/job/:category?" :paramsDesc="['分类，见下表，默认为招聘公告']" radar="1" rssbud="1">
 
 | 专场招聘会       | 校园双选会        | 空中宣讲      | 招聘公告     |
 | ----------- | ------------ | --------- | -------- |
@@ -3096,6 +3150,12 @@ type 列表：
 
 <Route author="sushengmao" example="/zkyai" path="/zkyai" />
 
+## 中南财经政法大学
+
+### 通知公告
+
+<Route author="nczitzk" example="/zuel/notice" path="/zuel/notice"/>
+
 ## 中南大学
 
 ### 招聘信息
@@ -3105,6 +3165,16 @@ type 列表：
 | 招聘类型 | 本部招聘 | 湘雅招聘 | 铁道招聘 | 在线招聘 | 事业招考 |
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | 参数   | 1    | 2    | 3    | 4    | 5    |
+
+</Route>
+
+### 计算机学院
+
+<Route author="j1g5awi" example="/csu/cse" path="/csu/cse/:type?" :paramsDesc="['类型']">
+
+| 类型 | 学院新闻 | 通知公告 | 学术信息 | 学工动态 | 科研动态 |
+| -- | ---- | ---- | ---- | ---- | ---- |
+| 参数 | xyxw | tzgg | xsxx | xgdt | kydt |
 
 </Route>
 
