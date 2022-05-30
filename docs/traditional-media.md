@@ -66,8 +66,11 @@ pageClass: routes
 
 ### 话题
 
-<Route author="mjysci" example="/apnews/topics/ap-top-news" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/hub/ap-top-news](https://apnews.com/hub/ap-top-news) 的话题为 `ap-top-news`']"  anticrawler="1"/>
+<Route author="zoenglinghou mjysci" example="/apnews/topics/ap-top-news" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/hub/ap-top-news](https://apnews.com/hub/ap-top-news) 的话题为 `ap-top-news`']" radar="1" rssbud="1" anticrawler="1" puppeteer="1">
+
 采用了 `puppeteer` 规避 `Project Shield`，无全文抓取，建议自建。
+
+</Route>
 
 ## BBC
 
@@ -667,6 +670,30 @@ IT・科学 tech_science
 
 </Route>
 
+## 朝鲜中央通讯社
+
+### 新闻
+
+<Route author="Rongronggg9" example="/kcna/cn" path="/kcna/:lang/:category?" :paramsDesc="['语言，见下表', '分类，见下表']" anticrawler="1" radar="1" rssbud="1">
+
+| 语言      | 조선어  | English | 中国语  | Русский | Español | 日本語  |
+| ------- | ---- | ------- | ---- | ------- | ------- | ---- |
+| `:lang` | `kp` | `en`    | `cn` | `ru`    | `es`    | `jp` |
+
+| 分类                      | `:category`                        |
+| ----------------------- | ---------------------------------- |
+| 朝鲜劳动党总书记**金正恩**同志革命活动新闻 | `54c0ca4ca013a92cc9cf95bd4004c61a` |
+| 最新新闻 (默认)               | `1ee9bdb7186944f765208f34ecfb5407` |
+| 主要新闻                    | `5394b80bdae203fadef02522cfb578c0` |
+| 国内新闻                    | `b2b3bcc1b0a4406ab0c36e45d5db58db` |
+| 文件                      | `a8754921399857ebdbb97a98a1e741f5` |
+| 国际新闻                    | `593143484cf15d48ce85c26139582395` |
+| 社会－生活                   | `93102e5a735d03979bc58a3a7aefb75a` |
+| 对外关系                    | `0f98b4623a3ef82aeea78df45c423fd0` |
+| 时事解说                    | `12c03a49f7dbe829bceea8ac77088c21` |
+
+</Route>
+
 ## 第一财经
 
 ### 直播区
@@ -1068,6 +1095,26 @@ category 对应的关键词有
 
 <Route author="wushijishan nczitzk" example="/kaopunews/:language?" path="/kaopunews" :paramsDesc="['语言，可选 zh-hans 即简体中文，或 zh-hant 即繁体中文']"/>
 
+## 理论网
+
+### 学习时报
+
+<Route author="nczitzk" example="/cntheory/paper" path="/cntheory/paper/:id?" :paramsDesc="['编号，见下表，默认为全部']">
+
+| 版           | 编号 |
+| ----------- | -- |
+| 全部          |    |
+| 第 A1 版：国内大局 | A1 |
+| 第 A2 版：市场经济 | A2 |
+| 第 A3 版：民主法治 | A3 |
+| 第 A4 版：读书治学 | A4 |
+| 第 A5 版：特别策划 | A5 |
+| 第 A6 版：科技前沿 | A6 |
+| 第 A7 版：社会治理 | A7 |
+| 第 A8 版：学员天地 | A8 |
+
+</Route>
+
 ## 连线 Wired
 
 非订阅用户每月有阅读全文次数限制。
@@ -1106,51 +1153,53 @@ category 对应的关键词有
 
 ## 路透社
 
-### 实时资讯
+::: warning 迁移说明
 
-<Route author="black-desk" example="/reuters/theWire" path="/reuters/theWire" />
+1.  路透社中文网站 (`cn.reuters.com`) 和英国网站 (`uk.reuters.com`) 已经关闭，并重定向至主站 (`www.reuters.com`)
+2.  旧路由已被废弃，请迁移至下面列出的新路由
 
-### 频道
+:::
 
-<Route author="HenryQW proletarius101" example="/reuters/channel/cn/analyses" path="/reuters/channel/:site/:channel" :paramsDesc="['语言，支持的分站列表如下','频道名，请注意大小写需与如下表格中一致。']">
+### 分类 / 话题 / 作者
 
-支持语言列表
+<Route author="HenryQW proletarius101 LyleLee" example="/reuters/world/us" path="/reuters/:category/:topic?" :paramsDesc="['可在 URL 中找到，或参考下面的表格', '可在 URL 中找到，或参考下面的表格']">
 
--   中国分站 `cn`：
+-   `:category`:
+    | World | Business | Legal | Markets | Breakingviews | Technology |
+    | ----- | -------- | ----- | ------- | ------------- | ---------- |
+    | world | business | legal | markets | breakingviews | technology |
 
-    -   主频道：
+-   `world/:topic`:
 
-    | 深度分析     | 时事要闻        | 生活   | 投资        |
-    | -------- | ----------- | ---- | --------- |
-    | analyses | generalnews | life | investing |
+    | All | Africa | Americas | Asia Pacific | China | Europe | India | Middle East | United Kingdom | United States | The Great Reboot | Reuters Next |
+    | --- | ------ | -------- | ------------ | ----- | ------ | ----- | ----------- | -------------- | ------------- | ---------------- | ------------ |
+    |     | africa | americas | asia-pacific | china | europe | india | middle-east | uk             | us            | the-great-reboot | reuters-next |
 
-    -   资讯子频道：
+-   `business/:topic`:
 
-    | 中国财经  | 国际财经                  | 新闻人物      | 财经视点     |
-    | ----- | --------------------- | --------- | -------- |
-    | china | internationalbusiness | newsmaker | opinions |
+    | All | Aerospace & Defense | Autos & Transportation | Energy | Environment | Finance | Healthcare & Pharmaceuticals | Media & Telecom | Retail & Consumer | Sustainable Business | Charged | Future of Health | Future of Money | Take Five | Reuters Impact |
+    | --- | ------------------- | ---------------------- | ------ | ----------- | ------- | ---------------------------- | --------------- | ----------------- | -------------------- | ------- | ---------------- | --------------- | --------- | -------------- |
+    |     | aerospace-defense   | autos-transportation   | energy | environment | finance | healthcare-pharmaceuticals   | media-telecom   | retail-consumer   | sustainable-business | charged | future-of-health | futrue-of-money | take-five | reuters-impact |
 
-    -   专栏子频道：
+-   `legal/:topic`:
 
-    | 中国财经专栏   | 国际财经专栏    | 大宗商品专栏    |
-    | -------- | --------- | --------- |
-    | CnColumn | IntColumn | ComColumn |
+    | All | Goverment | Legal Industry | Litigation | Transaction |
+    | --- | --------- | -------------- | ---------- | ----------- |
+    |     | goverment | legalindustry  | litigation | transaction |
 
--   美国分站 `us`：
+-   `authors/:topic`:
 
-    -   主频道：
+    | 默认      | Jonathan Landay | 其他作者           |
+    | ------- | --------------- | -------------- |
+    | reuters | jonathan-landay | 作者名，可在 URL 中找到 |
 
-    | Business | Markets | World | Politics | Tech       | Breakingviews | Wealth | Life      |
-    | -------- | ------- | ----- | -------- | ---------- | ------------- | ------ | --------- |
-    | business | markets | world | politics | technology | breakingviews | wealth | lifestyle |
+可在分类 / 话题页的 URL 中找到更多。
 
--   英国分站 `uk`：
+</Route>
 
-    -   主频道：
+### 深度调查栏目
 
-    | Business | Markets | World | UK | Tech       | Money           | Breakingviews | Sport  | Life      |
-    | -------- | ------- | ----- | -- | ---------- | --------------- | ------------- | ------ | --------- |
-    | business | markets | world | uk | technology | personalFinance | breakingviews | sports | lifestyle |
+<Route author="LyleLee" example="/reuters/inverstigates" path="/reuters/inverstigates" />
 
 </Route>
 
@@ -1221,7 +1270,7 @@ category 对应的关键词有
 
 ### 新闻
 
-<Route author="HenryQW" example="/nytimes/dual" path="/nytimes/:lang?" :paramsDesc="['语言，缺省中文']">
+<Route author="HenryQW" example="/nytimes/dual" path="/nytimes/:lang?" :paramsDesc="['语言，缺省中文']" puppeteer="1">
 
 通过提取文章全文，以提供比官方源更佳的阅读体验。
 

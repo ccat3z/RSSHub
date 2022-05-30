@@ -60,7 +60,7 @@ The following are some of the supported Channel and Topic ids.
 
 ### Topics
 
-<RouteEn author="zoenglinghou" example="/apnews/topics/apf-topnews" path="/apnews/topics/:topic" :paramsDesc="['Topic name，can be found in URL. For example: the topic name of AP Top News [https://apnews.com/apf-topnews](https://apnews.com/apf-topnews) is `apf-topnews`']" radar="1" rssbud="1"/>
+<RouteEn author="zoenglinghou mjysci" example="/apnews/topics/apf-topnews" path="/apnews/topics/:topic" :paramsDesc="['Topic name，can be found in URL. For example: the topic name of AP Top News [https://apnews.com/apf-topnews](https://apnews.com/apf-topnews) is `apf-topnews`']" radar="1" rssbud="1" anticrawler="1" puppeteer="1"/>
 
 ## BBC
 
@@ -175,6 +175,30 @@ Generates full-text feeds that the official feed doesn't provide.
 
 </RouteEn>
 
+## Korean Central News Agency (KCNA)
+
+### News
+
+<RouteEn author="Rongronggg9" example="/kcna/en" path="/kcna/:lang/:category?" :paramsDesc="['Language, refer to the table below', 'Category, refer to the table below']" anticrawler="1" radar="1" rssbud="1">
+
+| Language | 조선어  | English | 中国语  | Русский | Español | 日本語  |
+|----------|------|---------|------|---------|---------|------|
+| `:lang`  | `kp` | `en`    | `cn` | `ru`    | `es`    | `jp` |
+
+| Category                                                         | `:category`                        |
+|------------------------------------------------------------------|------------------------------------|
+| WPK General Secretary **Kim Jong Un**'s Revolutionary Activities | `54c0ca4ca013a92cc9cf95bd4004c61a` |
+| Latest News (default)                                            | `1ee9bdb7186944f765208f34ecfb5407` |
+| Top News                                                         | `5394b80bdae203fadef02522cfb578c0` |
+| Home News                                                        | `b2b3bcc1b0a4406ab0c36e45d5db58db` |
+| Documents                                                        | `a8754921399857ebdbb97a98a1e741f5` |
+| World                                                            | `593143484cf15d48ce85c26139582395` |
+| Society-Life                                                     | `93102e5a735d03979bc58a3a7aefb75a` |
+| External                                                         | `0f98b4623a3ef82aeea78df45c423fd0` |
+| News Commentary                                                  | `12c03a49f7dbe829bceea8ac77088c21` |
+
+</RouteEn>
+
 ## Ming Pao
 
 ### Ming Pao Daily
@@ -235,26 +259,55 @@ Parameters can be obtained from the official website, for instance:
 
 ## Reuters
 
-### Channel
+::: warning Migration notes
 
-<RouteEn author="HenryQW proletarius101" example="/reuters/channel/uk/personalFinance" path="/reuters/channel/:site/:channel" :paramsDesc="['sub-site, see the supported list below','channel, please note it\'s case-sensitive']">
+1. Reuters Chinese site (`cn.reuters.com`) and British site (`uk.reuters.com`) have been terminated, redirecting to the main site (`www.reuters.com`)
+2. The old routes are deprecated. Please migrate to the new routes documented below
 
-Supported sub-sites:
+:::
 
--   中国分站 `cn`：
-    See [路透社中国分站](../traditional-media.html#lu-tou-she)
+### Category/Topic/Author
 
--   US site `us`：
-    | Business | Markets | World | Politics | Tech | Breakingviews | Wealth | Life |
-    | -------- | ------- | ----- | -------- | ---------- | ------------- | ------ | --------- |
-    | business | markets | world | politics | technology | breakingviews | wealth | lifestyle |
+<RouteEn author="HenryQW proletarius101 LyleLee" example="/reuters/world/us" path="/reuters/:category/:topic?" :paramsDesc="['find it in the URL, or tables below', 'find it in the URL, or tables below']">
 
--   UK site `uk`：
-    | Business | World | UK | Tech | Money | Breakingviews | Life |
-    | -------- | ----- | --- | ---------- | --------------- | ------------- | --------- |
-    | business | world | uk | technology | personalFinance | breakingviews | lifestyle |
+-   `:category`:
+    | World    | Business | Legal | Markets  | Breakingviews | Technology |
+    | -------- | -------  | ----- | -------- | ------------- | ---------- |
+    | world    | business | legal | markets  | breakingviews | technology |
+
+
+-   `world/:topic`:
+
+    | All  | Africa   | Americas | Asia Pacific | China | Europe | India | Middle East | United Kingdom | United States | The Great Reboot | Reuters Next |
+    | ---- | -------  | -------- | ------------ | ----- | ------ | ----- | ----------- | -------------- | ------------- | ---------------- | ------------ |
+    |      | africa    | americas | asia-pacific | china | europe | india | middle-east | uk             | us            | the-great-reboot | reuters-next |
+
+
+-   `business/:topic`:
+
+    | All  | Aerospace & Defense | Autos & Transportation | Energy | Environment | Finance | Healthcare & Pharmaceuticals | Media & Telecom | Retail & Consumer | Sustainable Business | Charged | Future of Health | Future of Money | Take Five | Reuters Impact |
+    | ---- | ------------------- | ---------------------- | ------ | ----------- | ------- | ---------------------------- | --------------- | ----------------- | -------------------- | ------- | ---------------- | --------------- | --------- | -------------- |
+    |      | aerospace-defense   | autos-transportation   | energy | environment | finance | healthcare-pharmaceuticals   | media-telecom   | retail-consumer   | sustainable-business | charged | future-of-health | futrue-of-money | take-five | reuters-impact |
+
+-   `legal/:topic`:
+
+    | All | Goverment | Legal Industry | Litigation | Transaction |
+    | --- | --------- | -------------- | ---------- | ----------- |
+    |     | goverment | legalindustry  | litigation | transaction |
+
+-   `authors/:topic`:
+
+    | Default | Jonathan Landay | any other authors |
+    | ------- | --------------- | ----------------- |
+    | reuters | jonathan-landay | their name in URL |
+
+More could be found in the URL of the category/topic page.
 
 </RouteEn>
+
+### Inverstigates
+
+<RouteEn author="LyleLee" example="/reuters/inverstigates" path="/reuters/inverstigates" />
 
 ## RTHK
 
