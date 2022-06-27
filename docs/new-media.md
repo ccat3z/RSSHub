@@ -138,6 +138,18 @@ pageClass: routes
 
 <Route author="nczitzk" example="/aljazeera/news" path="/aljazeera/news"/>
 
+## AppleInsider
+
+### 分类
+
+<Route author="nczitzk" example="/appleinsider" path="/appleinsider/:category?" :paramsDesc="['分类，见下表，默认为空，即 News']">
+
+| News | Reviews | How-tos |
+| ---- | ------- | ------- |
+|      | reviews | how-to  |
+
+</Route>
+
 ## ASML 阿斯麦
 
 ### Press releases & announcements
@@ -1173,6 +1185,16 @@ IPFS 网关有可能失效，那时候换成其他网关。
     -   Soomal 论坛与留言系统的更新：<http://www.soomal.com/bbs/101.rss.xml>
 
 </Route>
+
+## SupChina
+
+### Feed
+
+<Route author="nczitzk" example="/supchina" path="/supchina"/>
+
+### Podcasts
+
+<Route author="nczitzk" example="/supchina/podcasts" path="/supchina/podcasts"/>
 
 ## swissinfo
 
@@ -3108,6 +3130,21 @@ column 为 third 时可选的 category:
 
 <Route author="Jeason0228" example="/sspai/tag/apple" path="/sspai/tag/:keyword" :paramsDesc="['关键词']" radar="1"/>
 
+## 深潮 TechFlow
+
+### 分类
+
+<Route author="nczitzk" example="/techflow520" path="/techflow520/:category?" :paramsDesc="['分类，见下表，默认为头条']">
+
+| 头条 | 元宇宙 | 项目 | DeFi | 矿业 | 隐私计算 | 碳中和 | 活动 | NFT | 产业 |
+| -- | --- | -- | ---- | -- | ---- | --- | -- | --- | -- |
+
+</Route>
+
+### 快讯
+
+<Route author="nczitzk" example="/techflow520/newsflash" path="/techflow520/newsflash"/>
+
 ## 深焦
 
 ### 分类
@@ -3227,6 +3264,12 @@ column 为 third 时可选的 category:
 | 全部  | 每周项目精选 | 每月项目精选  | 海外项目精选        | 近期热门项目 | 近期最多收藏   |
 | --- | ------ | ------- | ------------- | ------ | -------- |
 | all | weekly | monthly | international | hot    | favorite |
+
+## 水果派
+
+### 首页
+
+<Route author="nczitzk" example="/shuiguopai" path="/shuiguopai" />
 
 ## 搜狐号
 
@@ -3355,6 +3398,12 @@ column 为 third 时可选的 category:
 触发反爬会只抓取到标题，建议自建。
 
 ## 网易新闻
+
+::: warning 注意
+
+若视频因防盗链而无法播放，请参考 [通用参数 -> 多媒体处理](/parameter.html#duo-mei-ti-chu-li) 配置 `multimedia_hotlink_template` **或** `wrap_multimedia_in_iframe`。
+
+:::
 
 ### 今日关注
 

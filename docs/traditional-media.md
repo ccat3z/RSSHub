@@ -66,11 +66,7 @@ pageClass: routes
 
 ### 话题
 
-<Route author="zoenglinghou mjysci" example="/apnews/topics/ap-top-news" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/hub/ap-top-news](https://apnews.com/hub/ap-top-news) 的话题为 `ap-top-news`']" radar="1" rssbud="1" anticrawler="1" puppeteer="1">
-
-采用了 `puppeteer` 规避 `Project Shield`，无全文抓取，建议自建。
-
-</Route>
+<Route author="zoenglinghou mjysci TonyRL" example="/apnews/topics/ap-top-news" path="/apnews/topics/:topic?" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/hub/ap-top-news](https://apnews.com/hub/ap-top-news) 的话题为 `ap-top-news`，默认为 `trending-news`']" radar="1" rssbud="1" />
 
 ## BBC
 
@@ -1278,6 +1274,56 @@ category 对应的关键词有
 
 </Route>
 
+## 南湖清风
+
+### 嘉兴日报
+
+<Route author="nczitzk" example="/cnjxol/jxrb" path="/cnjxol/jxrb/:id?" :paramsDesc="['编号，见下表，默认为全部']" anticrawler="1">
+
+| 版            | 编号 |
+| ------------ | -- |
+| 全部           |    |
+| 第 01 版：要闻    | 01 |
+| 第 02 版：要闻    | 02 |
+| 第 03 版：要闻    | 03 |
+| 第 04 版：嘉一度   | 04 |
+| 第 05 版：聚焦    | 05 |
+| 第 06 版：党报热线  | 06 |
+| 第 07 版：天下    | 07 |
+| 第 08 版：聚焦    | 08 |
+| 第 09 版：南湖新闻  | 09 |
+| 第 10 版：综合    | 10 |
+| 第 11 版：梅花洲   | 11 |
+| 第 12 版：南湖纵横  | 12 |
+| 第 13 版：秀洲新闻  | 13 |
+| 第 14 版：综合    | 14 |
+| 第 15 版：秀・观察  | 15 |
+| 第 16 版：走进高新区 | 16 |
+
+</Route>
+
+### 南湖晚报
+
+<Route author="nczitzk" example="/cnjxol/nhwb" path="/cnjxol/nhwb/:id?" :paramsDesc="['编号，见下表，默认为全部']" anticrawler="1">
+
+| 版                    | 编号 |
+| -------------------- | -- |
+| 全部                   |    |
+| 第 01 版：要闻            | 01 |
+| 第 02 版：品质嘉兴・红船旁的美丽城镇 | 02 |
+| 第 03 版：嘉兴新闻          | 03 |
+| 第 04 版：嘉兴新闻          | 04 |
+| 第 05 版：今日聚焦          | 05 |
+| 第 06 版：嘉兴新闻          | 06 |
+| 第 07 版：热线新闻          | 07 |
+| 第 08 版：财经新闻          | 08 |
+| 第 09 版：热线新闻          | 09 |
+| 第 10 版：公益广告          | 10 |
+| 第 11 版：消费周刊          | 11 |
+| 第 12 版：悦读坊           | 12 |
+
+</Route>
+
 ## 南华早报 SCMP
 
 ### 新闻
@@ -1312,9 +1358,9 @@ category 对应的关键词有
 
 ### 新闻简报
 
-<Route author="yueyericardo" example="/nytimes/daily_briefing_chinese" path="/nytimes/daily_briefing_chinese">
+<Route author="yueyericardo nczitzk" example="/nytimes/daily_briefing_chinese" path="/nytimes/daily_briefing_chinese">
 
-网站地址：<https://www.nytimes.com/zh-hans/series/daily-briefing-chinese/>
+网站地址：<https://www.nytimes.com/zh-hans/series/daily-briefing-chinese>
 
 </Route>
 
@@ -1528,23 +1574,23 @@ category 对应的关键词有
 
 ### 热门
 
-<Route author="hoilc" example="/hk01/hot" path="/hk01/hot" radar="1" rssbud="1"/>
+<Route author="hoilc Fatpandac" example="/hk01/hot" path="/hk01/hot" radar="1" rssbud="1"/>
 
 ### 栏目
 
-<Route author="hoilc" example="/hk01/zone/11" path="/hk01/zone/:id" :paramsDesc="['栏目 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
+<Route author="hoilc Fatpandac" example="/hk01/zone/11" path="/hk01/zone/:id" :paramsDesc="['栏目 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
 
 ### 子栏目
 
-<Route author="hoilc" example="/hk01/channel/391" path="/hk01/channel/:id" :paramsDesc="['子栏目 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
+<Route author="hoilc Fatpandac" example="/hk01/channel/391" path="/hk01/channel/:id" :paramsDesc="['子栏目 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
 
 ### 专题
 
-<Route author="hoilc" example="/hk01/issue/649" path="/hk01/issue/:id" :paramsDesc="['专题 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
+<Route author="hoilc Fatpandac" example="/hk01/issue/649" path="/hk01/issue/:id" :paramsDesc="['专题 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
 
 ### 标签
 
-<Route author="hoilc" example="/hk01/tag/2787" path="/hk01/tag/:id" :paramsDesc="['标签 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
+<Route author="hoilc Fatpandac" example="/hk01/tag/2787" path="/hk01/tag/:id" :paramsDesc="['标签 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
 
 ## 香港電台
 
