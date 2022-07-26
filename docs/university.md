@@ -1001,9 +1001,15 @@ xskb1 对应 <http://www.auto.uestc.edu.cn/index/xskb1.htm>
 
 ## 广东工业大学
 
-### 校内新闻网
+### 通知公文网
 
-<Route author="Jiangming1399" example="/gdut/news" path="/gdut/news"/>
+<Route author="Jim Kirisame" example="/gdut/oa_news" path="/gdut/oa_news/:category" :paramsDesc="['分类名']">
+
+| 校内简讯 | 校内通知   | 公示公告         | 招标公告          | 招标结果          |
+| ---- | ------ | ------------ | ------------- | ------------- |
+| news | notice | announcement | tender_invite | tender_result |
+
+</Route>
 
 ## 广东海洋大学
 
@@ -1321,6 +1327,18 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 | 硕士招生 | 博士招生 |
 | ---- | ---- |
 | sszs | bszs |
+
+</Route>
+
+## 华北电力大学
+
+### 北京校区研究生院
+
+<Route author="nilleo" example="/ncepu/master/tzgg" path="/ncepu/master/:type" :paramsDesc="['类型参数']">
+
+| 类型 | 硕士招生信息 | 通知公告 | 研究生培养信息 |
+| -- | ------ | ---- | ------- |
+| 参数 | zsxx   | tzgg | pyxx    |
 
 </Route>
 
@@ -1702,6 +1720,14 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 | cgxx | cjgs | zfcgyxgk |
 
 </Route>
+
+### 基建处
+
+<Route author="ret-1" example="/nju/jjc" path="/nju/jjc" />
+
+### 本科迎新
+
+<Route author="ret-1" example="/nju/admission" path="/nju/admission" />
 
 ## 南京工程学院
 
@@ -2385,13 +2411,43 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 
 ## 天津大学
 
-### 天津大学教务处
+### 新闻网
 
-<Route author="AmosChenYQ" example="/tjpyu/ooa/news" path="/tjpyu/ooa/:type" :paramsDesc="['默认为`news`']">
+<Route author="SuperPung" example="/tju/news/focus" path="/tju/news/:type?" :paramsDesc="['默认为 `focus`']">
 
-| 新闻动态 | 通知公告         |
-| ---- | ------------ |
+|  聚焦天大 |   综合新闻  |   校内新闻   |  媒体报道 |   图说天大  |
+| :---: | :-----: | :------: | :---: | :-----: |
+| focus | general | internal | media | picture |
+
+</Route>
+
+### 智能与计算学部
+
+<Route author="SuperPung" example="/tju/cic/news" path="/tju/cic/:type?" :paramsDesc="['默认为 `news`']">
+
+| 学部新闻 |     通知公告     | 北洋智算论坛 |
+| :--: | :----------: | :----: |
+| news | notification |  forum |
+
+</Route>
+
+### 教务处
+
+<Route author="AmosChenYQ SuperPung" example="/tju/oaa/news" path="/tju/oaa/:type?" :paramsDesc="['默认为 `news`']">
+
+| 新闻动态 |     通知公告     |
+| :--: | :----------: |
 | news | notification |
+
+</Route>
+
+### 研究生招生网
+
+<Route author="SuperPung" example="/tju/yzb/notice" path="/tju/yzb/:type?" :paramsDesc="['默认为 `notice`']">
+
+|  校级公告  |  统考硕士  |  统考博士  | 在职学位 |
+| :----: | :----: | :----: | :--: |
+| notice | master | doctor |  job |
 
 </Route>
 
@@ -3267,6 +3323,16 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 | 类型 | 学院新闻 | 通知公告 | 学术信息 | 学工动态 | 科研动态 |
 | -- | ---- | ---- | ---- | ---- | ---- |
 | 参数 | xyxw | tzgg | xsxx | xgdt | kydt |
+
+</Route>
+
+### 校长信箱
+
+<Route author="j1g5awi" example="/csu/mail" path="/csu/mail/:type?" :paramsDesc="['类型']">
+
+| 类型 | 校长信箱 | 党委信箱 |
+| -- | ---- | ---- |
+| 参数 | 01   | 02   |
 
 </Route>
 

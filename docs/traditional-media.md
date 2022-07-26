@@ -878,6 +878,45 @@ Type 栏目：
 
 <Route author="nczitzk" example="/pts/dailynews" path="/pts/dailynews"/>
 
+### 專題策展
+
+<Route author="nczitzk" example="/pts/curations" path="/pts/curations"/>
+
+### 觀點
+
+<Route author="nczitzk" example="/pts/opinion" path="/pts/opinion"/>
+
+### 數位敘事
+
+<Route author="nczitzk" example="/pts/projects" path="/pts/projects"/>
+
+### 深度報導
+
+<Route author="nczitzk" example="/pts/report" path="/pts/report"/>
+
+### 分類
+
+<Route author="nczitzk" example="/pts/category/9" path="/pts/category/:id" :paramsDesc="['分類 id，见下表，可在对应分類页 URL 中找到']">
+
+| 名称   | 编号 |
+| ---- | -- |
+| 政治   | 1  |
+| 社會   | 7  |
+| 全球   | 4  |
+| 生活   | 5  |
+| 兩岸   | 9  |
+| 地方   | 11 |
+| 產經   | 10 |
+| 文教科技 | 6  |
+| 環境   | 3  |
+| 社福人權 | 12 |
+
+</Route>
+
+### 標籤
+
+<Route author="nczitzk" example="/pts/tag/230" path="/pts/tag/:id" :paramsDesc="['標籤 id，可在对应標籤页 URL 中找到']"/>
+
 ## 共同网
 
 ### 最新报道
@@ -1154,6 +1193,12 @@ category 对应的关键词有
 <Route author="Naiqus" example="/wired/tag/bitcoin" path="/wired/tag/:tag" :paramsDesc="['标签']"/>
 
 ## 联合早报
+
+::: warning 注意
+
+由于 [RSSHub#10309](https://github.com/DIYgod/RSSHub/issues/10309) 中的问题，使用靠近香港的服务器部署将从 hk 版联合早报爬取内容，造成输出的新闻段落顺序错乱。如有订阅此源的需求，建议寻求部署在远离香港的服务器上的 RSSHub，或者在自建时选择远离香港的服务器。
+
+:::
 
 ### 即时新闻
 

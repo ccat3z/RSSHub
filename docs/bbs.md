@@ -284,11 +284,17 @@ pageClass: routes
 
 ### 帖子
 
-<Route author="xyqfer" example="/nga/post/18449558" path="/nga/post/:tid"  :paramsDesc="['帖子 id, 可在帖子 URL 找到']" radar="1" rssbud="1"/>
+<Route author="xyqfer syrinka" example="/nga/post/18449558" path="/nga/post/:tid/:authorId?"  :paramsDesc="['帖子 id, 可在帖子 URL 找到', '作者 id']" radar="1" rssbud="1"/>
 
 ## PLAYNO.1 玩樂達人
 
 ### AV
+
+::: warning 注意
+
+目前观测到该博客可能禁止日本 IP 访问。建议部署在日本区以外的服务器上。
+
+:::
 
 <Route author="TonyRL" example="/playno1/av" path="/playno1/av/:catid?" :paramsDesc="['分类，见下表，默认为全部文章']" radar="1" rssbud="1">
 

@@ -14,6 +14,12 @@ pageClass: routes
 
 </Route>
 
+## Android
+
+### SDK Platform Tools release notes
+
+<Route author="nczitzk" example="/android/platform-tools-releases" path="/android/platform-tools-releases"/>
+
 ## Anki
 
 ### Changes
@@ -104,6 +110,12 @@ pageClass: routes
 | ------- | -------- | --------- | ----- | -------------- |
 | android | iphone   | ipad      | win   | android_tv_yst |
 
+## Brave
+
+### Release Notes
+
+<Route author="nczitzk" example="/brave/latest" path="/brave/latest"/>
+
 ## Bugly SDK
 
 ### 更新日志
@@ -133,6 +145,18 @@ pageClass: routes
 ### 扩展程序更新
 
 <Route author="DIYgod" example="/chrome/webstore/extensions/kefjpfngnndepjbopdmoebkipbgkggaa" path="/chrome/webstore/extensions/:id" :paramsDesc="['扩展程序 id, 可在应用页 URL 中找到']" />
+
+## Clash
+
+### Premium Releases
+
+<Route author="ttttmr" example="/clash/premium" path="/clash/premium" radar="1" />
+
+## CPUID
+
+### 新闻
+
+<Route author="TonyRL" example="/cpuid/news" path="/cpuid/news" radar="1" rssbud="1"/>
 
 ## cpython
 
@@ -234,6 +258,12 @@ pageClass: routes
 
 <Route author="DIYgod" example="/firefox/addons/rsshub-radar" path="/firefox/addons/:id" :paramsDesc="['附加组件 id, 可在应用页 URL 中找到']" />
 
+## FossHub
+
+### Software Update
+
+<Route author="nczitzk" example="/fosshub/qBittorrent" path="/fosshub/:id" :paramsDesc="['软件 id，可在对应软件页 URL 中找到']"/>
+
 ## Greasy Fork
 
 ### 脚本更新
@@ -245,6 +275,12 @@ pageClass: routes
 ### 更新日志
 
 <Route author="maokwen" example="/hugo/releases" path="/hugo/releases"/>
+
+## ImageMagick
+
+### Changelog
+
+<Route author="nczitzk" example="/imagemagick/changelog" path="/imagemagick/changelog"/>
 
 ## IPSW\.me
 
@@ -312,6 +348,12 @@ pageClass: routes
 
 </Route>
 
+## Neat Download Manager
+
+### Download
+
+<Route author="nczitzk" example="/neatdownloadmanager/download" path="/neatdownloadmanager/download/:os?" :paramsDesc="['操作系统，可选 windows 或 macos，默认为全部']"/>
+
 ## Nintendo Switch
 
 ### Switch 本体更新情报（日本）
@@ -329,6 +371,21 @@ pageClass: routes
 ### 更新日志
 
 <Route author="cielpy" example="/nvidia/webdriverupdate" path="/nvidia/webdriverupdate"/>
+
+## O\&O Software
+
+### Changelog
+
+<Route author="nczitzk" example="/oo-software/changelog/shutup10" path="/oo-software/changelog/:id" :paramsDesc="['软件 id，见下表，默认为 shutup10，可在对应软件页中找到']">
+
+| Software       | Id          |
+| -------------- | ----------- |
+| O&O ShutUp10++ | shutup10    |
+| O&O AppBuster  | ooappbuster |
+| O&O Lanytix    | oolanytix   |
+| O&O DeskInfo   | oodeskinfo  |
+
+</Route>
 
 ## Obsidian
 
@@ -354,6 +411,12 @@ pageClass: routes
 
 见 [#playstation](/game.html#playstation)
 
+## Postman
+
+### Release Notes
+
+<Route author="nczitzk" example="/postman/release-notes" path="/postman/release-notes"/>
+
 ## Potplayer
 
 ### 版本历史
@@ -365,6 +428,12 @@ pageClass: routes
 | ko  | zh_CN   | zh_TW   | en      | uk         | ru      | pl     |
 
 </Route>
+
+## PuTTY
+
+### Change Log
+
+<Route author="nczitzk" example="/putty/changes" path="/putty/changes"/>
 
 ## qBittorrent
 
@@ -484,6 +553,24 @@ pageClass: routes
 
 <Route author="nczitzk" example="/typora/changelog-dev/macOS" path="/typora/changelog-dev/:os" :paramsDesc="['操作系统类型, 可选 `macOS` 或 `Windows` 与 `Linux`，默认为 `macOS`']"/>
 
+## VMware
+
+### Flings
+
+<Route author="nczitzk" example="/vmware/flings" path="/vmware/flings"/>
+
+## Western Digital
+
+### Download
+
+<Route author="nczitzk" example="/wdc/download/279" path="/wdc/download/:id?" :paramsDesc="['软件 id，可在对应软件页 URL 中找到，默认为 279，即 Western Digital Dashboard']"/>
+
+## WizTree
+
+### What's New
+
+<Route author="nczitzk" example="/diskanalyzer/whats-new" path="/diskanalyzer/whats-new"/>
+
 ## X410
 
 ### News
@@ -531,6 +618,10 @@ pageClass: routes
 ### 固件
 
 <Route author="Fatpandac" example="/asus/bios/RT-AX88U" path="/asus/bios/:model" :paramsDesc="['产品型号，可在产品页面找到']"/>
+
+### GPU Tweak
+
+<Route author="TonyRL" example="/asus/gpu-tweak" path="/asus/gpu-tweak" radar="1" rssbud="1"/>
 
 ## 蒲公英应用分发
 
