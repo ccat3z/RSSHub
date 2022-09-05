@@ -801,6 +801,12 @@ Edition
 
 </Route>
 
+## Macfilos
+
+### Blog
+
+<Route author="nczitzk" example="/macfilos/blog" path="/macfilos/blog" />
+
 ## MakeUseOf
 
 <Route author="nczitzk" example="/makeuseof" path="/makeuseof/:category?" :paramsDesc="['分类，默认为 Trending']"/>
@@ -1769,6 +1775,16 @@ Supported sub-sites:
 
 </Route>
 
+## 島民衛星 Islander
+
+### 事件分析
+
+<Route author="TonyRL" example="/islander/search" path="/islander/search" radar="1" rssbud="1"/>
+
+### 單日焦點
+
+<Route author="TonyRL" example="/islander/top30event" path="/islander/top30event" radar="1" rssbud="1"/>
+
 ## 得到
 
 ### 首页
@@ -2274,6 +2290,10 @@ others = 热点新闻 + 滚动新闻
 
 <Route author="HenryQW" example="/huxiu/article" path="/huxiu/article" />
 
+### 24 小时
+
+<Route author="nczitzk" example="/huxiu/moment" path="/huxiu/moment" />
+
 ### 标签
 
 <Route author="xyqfer HenryQW" example="/huxiu/tag/291" path="/huxiu/tag/:id" :paramsDesc="['标签 id']" />
@@ -2289,6 +2309,10 @@ others = 热点新闻 + 滚动新闻
 ### 文集
 
 <Route author="AlexdanerZe" example="/huxiu/collection/212" path="/huxiu/collection/:id" :paramsDesc="['文集 id']" />
+
+### 简报
+
+<Route author="Fatpandac" example="/huxiu/briefcolumn/1" path="/huxiu/briefcolumn/:id" :paramsDesc="['简报 id']" />
 
 ## 互动吧
 
@@ -4068,6 +4092,18 @@ wechat-feeds 来源[已停止更新](https://github.com/hellodword/wechat-feeds/
 
 </Route>
 
+## 壹蘋新聞網
+
+### 最新新聞
+
+<Route author="miles170" example="/nextapple/realtime/new" path="/nextapple/realtime/:category?" :paramsDesc="['類別，見下表，默認為最新']">
+
+| 最新  | 娛樂            | 生活   | 社會    | 政治       | 國際            | 財經      | 飲食旅遊      | 房市       | 時尚      | 車市   | 健康     | 體育     | 3C     |
+| --- | ------------- | ---- | ----- | -------- | ------------- | ------- | --------- | -------- | ------- | ---- | ------ | ------ | ------ |
+| new | entertainment | life | local | politics | international | finance | lifestyle | property | fashion | auto | health | sports | gadget |
+
+</Route>
+
 ## 移动支付网
 
 ### 新闻
@@ -4357,4 +4393,4 @@ QueryString:
 | ---- | ----- | ----- |
 |      | zh-hk | zh-tw |
 
- </Route>
+</Route>
