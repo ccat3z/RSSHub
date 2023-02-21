@@ -343,12 +343,6 @@ pageClass: routes
 
 <Route author="nczitzk" example="/now/news/rank" path="/now/news/rank"/>
 
-## Phoronix
-
-### 新闻与评测
-
-<Route author="oppliate" example="/phoronix/news_topic/Intel" path="/phoronix/:page/:queryOrItem?" :paramsDesc="['页面', '对 `category` 页面是分类项目 `item`，对其它页面是主题 `q`，可以在网站顶部导航栏各项目链接里找出。如 `https://www.phoronix.com/scan.php?page=category&item=Computers` 对应 `/phoronix/category/Computers`']" />
-
 ## RTHK 傳媒透視
 
 <Route author="tpnonthealps" example="/mediadigest/latest" path="/mediadigest/:range" :paramsDesc="['时间范围']">
@@ -530,7 +524,7 @@ Solidot 提供的 feed:
 
 ### 新聞
 
-<Route author="KeiLongW" example="/yahoo-news/hk/world" path="/yahoo-news/:region/:category?" :paramsDesc="['地区','类别']">
+<Route author="KeiLongW" example="/yahoo/news/hk/world" path="/yahoo/news/:region/:category?" :paramsDesc="['地区','类别']" radar="1">
 
 `地区`
 
@@ -931,6 +925,8 @@ IT・科学 tech_science
 
 ## 东网
 
+### 即時新聞
+
 <Route author="Fatpandac" example="/oncc/zh-hant/news" path="/oncc/:language/:channel?" :paramsDesc="['`zh-hans` 为简体，`zh-hant` 为繁体', '频道，默认为港澳']">
 
 频道参数可以从官网的地址中获取，如：
@@ -938,6 +934,16 @@ IT・科学 tech_science
 `https://hk.on.cc/hk/finance/index_cn.html` 对应 `/oncc/zh-hans/finance`
 
 `https://hk.on.cc/hk/finance/index.html` 对应 `/oncc/zh-hant/finance`
+
+</Route>
+
+### Money18
+
+<Route author="nczitzk" example="/oncc/money18/exp" path="/oncc/money18/:id?" :paramsDesc="['栏目 id，可在对应栏目页 URL 中找到，默认为 exp，即新聞總覽']">
+
+| 新聞總覽 | 全日焦點 | 板塊新聞     | 國際金融 | 大行報告     | A 股新聞    | 地產新聞 | 投資理財      | 新股 IPO | 科技財情 |
+| ---- | ---- | -------- | ---- | -------- | -------- | ---- | --------- | ------ | ---- |
+| exp  | fov  | industry | int  | recagent | ntlgroup | pro  | weainvest | ipo    | tech |
 
 </Route>
 
@@ -1343,6 +1349,18 @@ category 对应的关键词有
 | 客家焦點  | 政經要聞      | 民生醫療    | 地方風采  | 國際萬象          |
 | ----- | --------- | ------- | ----- | ------------- |
 | hakka | political | medical | local | international |
+
+</Route>
+
+## 劳动新闻
+
+### 新闻
+
+<Route author="TonyRL" example="/rodong/news" path="/rodong/news/:language?" :paramsDesc="['语言，见下表，默认 `ko`']" radar="1">
+
+| 조선어 | English | 中文 |
+| --- | ------- | -- |
+| ko  | en      | cn |
 
 </Route>
 
@@ -1817,6 +1835,18 @@ category 对应的关键词有
 | 26490  | 汽车圈     |
 | 115327 | IP SH   |
 | 117340 | 酒业      |
+
+</Route>
+
+### 侧边栏
+
+<Route author="bigfei" example="/thepaper/sidebar/hotNews" path="/thepaper/sidebar/sec?" :paramsDesc="['边栏 id，如下， 默认hotNews']">
+
+| 边栏 ID                    | 边栏名  |
+| ------------------------ | ---- |
+| hotNews                  | 澎湃热榜 |
+| financialInformationNews | 澎湃财讯 |
+| morningEveningNews       | 早晚报  |
 
 </Route>
 

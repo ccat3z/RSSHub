@@ -18,6 +18,20 @@ pageClass: routes
 
 </Route>
 
+## 591 租屋網
+
+### 租屋
+
+<Route author="Yukaii" example="/591/tw/rent/order=posttime&orderType=desc" path="/591/:country/rent/:query?" :paramsDesc="['網址國碼，目前僅支援 tw', '查詢參數']">
+
+::: tip 提示
+
+複製 591 篩選房屋頁面的網址，並去掉前段 `https://rent.591.com.tw/?` 部分，即可得到查詢參數。
+
+:::
+
+</Route>
+
 ## acwifi 路由器交流
 
 ### 新闻
@@ -801,7 +815,7 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 ### 最新辟谣
 
-<Route author="hoilc" example="/factcheck" path="/factcheck"/>
+<Route author="hoilc" example="/qq/fact" path="/qq/fact" radar="1"/>
 
 ## 天津产权交易中心
 
@@ -1000,6 +1014,12 @@ type 为 all 时，category 参数不支持 cost 和 free
 ### 产业政策
 
 <Route author="nczitzk" example="/cktest/policy" path="/cktest/policy"/>
+
+## 中国互联网联合辟谣平台
+
+### 今日辟谣
+
+<Route author="Fatpandac" example="/piyao/jrpy" path="/piyao/jrpy"/>
 
 ## 中国银行
 

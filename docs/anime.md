@@ -95,6 +95,12 @@ pageClass: routes
 
 </Route>
 
+## ACG17
+
+### 全部文章
+
+<Route author="SunBK201" example="/acg17/post/all" path="/acg17/post/all" radar="1" />
+
 ## AGE 动漫
 
 ### 最近更新
@@ -582,13 +588,13 @@ Sources
 
 ### 漫画更新
 
-<Route author="KellyHwong" path="/cartoonmad/comic/:id" example="/cartoonmad/comic/5827" :paramsDesc="['漫画ID']"/>
+<Route author="KellyHwong" path="/cartoonmad/comic/:id" example="/cartoonmad/comic/5827" :paramsDesc="['漫画ID']" radar="1"/>
 
 ## 风之动漫
 
-### 风之动漫
+### 在线漫画
 
-<Route author="geeeeoff zytomorrow" path="/fzdm/manhua/:id" example="/fzdm/manhua/93" :paramsDesc="['漫画ID。默认获取全部，建议使用通用参数limit获取指定数量']" anticrawler="1"/>
+<Route author="geeeeoff zytomorrow" path="/fffdm/manhua/:id/:cdn?" example="/fffdm/manhua/93" :paramsDesc="['漫画ID。默认获取全部，建议使用通用参数limit获取指定数量', 'cdn加速器。默认5，当前可选1-5']"  radar="1" rssbud="1"/>
 
 ## 海猫吧
 
