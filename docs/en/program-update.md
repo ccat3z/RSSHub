@@ -4,6 +4,12 @@ pageClass: routes
 
 # Application Updates
 
+## Amazon
+
+### Kindle Software Updates
+
+<RouteEn author="NavePnow" example="/amazon/kindle/software-updates" path="/amazon/kindle/software-updates" radar="1"/>
+
 ## Android
 
 ### SDK Platform Tools release notes
@@ -22,11 +28,11 @@ pageClass: routes
 
 <RouteEn author="nczitzk" example="/anytxt/release-notes" path="/anytxt/release-notes"/>
 
-## Apkpure
+## APKPure
 
 ### Versions
 
-<RouteEn author="maple3142" example="/apkpure/versions/jp/jp.co.craftegg.band" path="/apkpure/versions/:region/:pkg" :paramsDesc="['Region code', 'package name']"/>
+<RouteEn author="maple3142" example="/apkpure/versions/jp.co.craftegg.band/jp" path="/apkpure/versions/:pkg/:region?" :paramsDesc="['Package name', 'Region code, `en` by default']" radar="1" anticrawler="1" puppeteer="1"/>
 
 ## App Center
 
@@ -116,7 +122,7 @@ Language
 
 ### BlueStacks 5 Release Notes
 
-<RouteEn author="TonyRL" example="/bluestacks/release/5" path="/bluestacks/release/5" radar="1" puppeteer="1"/>
+<RouteEn author="TonyRL" example="/bluestacks/release/5" path="/bluestacks/release/5" radar="1" anticrawler="1" puppeteer="1"/>
 
 ## Brave
 
